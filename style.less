@@ -1,0 +1,280 @@
+@colorBg: #135371;
+@colorPrimmary: #23bbee;
+@colorSeconary: #17678c;
+@size-Wrapper: 1860px;
+@textColor: #6a6a6a;
+@colorPos: #2beeae;
+@colorNeg: #e73689;
+@colorNeut: #aaaaaa;
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: @colorBg;
+
+    body {
+        margin: 0;
+        padding: 30px;
+
+        header {
+            width: @size-Wrapper;
+            margin: 0 auto;
+
+
+            h1 {
+                font-size: 60px;
+                color: white;
+                margin: 0;
+                text-transform: uppercase;
+                background-image: url(img/logo-damdy.png);
+                background-repeat: no-repeat;
+                background-position: center right;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .wrapper {
+            padding-top: 50px;
+            width: @size-Wrapper;
+            margin: 0 auto;
+
+            .left {
+                width: 1220px;
+                margin-right: 20px;
+                float: left;
+
+
+                .player {
+                    width: 740px;
+                    margin-right: 30px;
+                }
+
+                .slider-face {
+                    width: 280px;
+                    height: 300px;
+                }
+
+                .speech {
+                    width: 100%;
+                    margin-top: 40px;
+                }
+            }
+
+            .right {
+                width: 600px;
+                margin-left: 20px;
+                float: left;
+
+                .box {
+                    width: 100%;
+                }
+
+                .ocr {
+                    ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                            border: 1px solid @colorPrimmary;
+                            color: @colorPrimmary;
+                            display: inline-block;
+                            margin-right: 5px;
+                            margin-top: 10px;
+                            height: 40px;
+                            line-height: 40px;
+                            padding: 0 15px;
+                            border-radius: 20px;
+                            text-transform: uppercase;
+                            font-size: 16px;
+                            max-width: 200px;
+
+                            &:hover, &.selected {
+                                background-color: @colorPrimmary;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .box {
+                display: inline-block;
+                float: left;
+                margin-bottom: 30px;
+
+                .header {
+                    background-color: @colorPrimmary;
+                    color: white;
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    height: 60px;
+                    line-height: 60px;
+                    padding: 0 30px;
+
+                    .selectLang {
+                        height: 30px;
+                        width: 90px;
+                        border-radius: 15px;
+                        margin: 15px 0px;
+                        float: right;
+                        background-color: #dcdcdc;
+                        border: 2px solid #1ea1cd;
+                        box-shadow: 3px 3px 5px 0px #1ea1cd;
+
+                        .lang {
+                            width: 45px;
+                            display: inline-block;
+                            font-size: 14px;
+                            text-align: center;
+                            color: @colorPrimmary;
+                            height: 30px;
+                            line-height: 30px;
+                            box-sizing: border-box;
+                            float: left;
+
+                            &:nth-child(odd) {
+                                border-top-left-radius: 13px;
+                                border-bottom-left-radius: 13px;
+                            }
+
+                            &:nth-child(even) {
+                                border-top-right-radius: 13px;
+                                border-bottom-right-radius: 13px;
+                            }
+
+                            &:hover, &.selected {
+                                background-color: #1ea1cd;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                .content {
+                    background-color: white;
+                    padding: 10px 30px;
+                    color: @textColor;
+                    font-size: 20px;
+                }
+
+                &.slider-face {
+                    .header {
+                        padding: 0 15px;
+                    }
+                }
+            }
+
+            .progressBox {
+                height: 90px;
+                width: 100%;
+                border-radius: 45px;
+                background-color: white;
+                padding: 40px;
+                box-sizing: border-box;
+
+                .progressBar {
+                    height: 10px;
+                    border-radius: 5px;
+
+                    div {
+                        float: left;
+                        height: 10px;
+                        display: inline-block;
+                        position: relative;
+                        z-index: 10;
+
+                        &:first-child {
+                            border-top-left-radius: 5px;
+                            border-bottom-left-radius: 5px;
+                        }
+
+                        &:last-child {
+                            border-top-right-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                        }
+
+
+                        &:before {
+                            position: absolute;
+                            width: 20px;
+                            top: 0;
+                            left: -10px;
+                            z-index: 200;
+                            height: 10px;
+                            display: block;
+                            content: "";
+                        }
+
+                        &.positive {
+                            background-color: @colorPos;
+
+                            &.beforeNegative {
+                                &:before {
+                                    background: -webkit-linear-gradient(left, @colorNeg, @colorPos); /* For Safari 5.1 to 6.0 */
+                                    background: -o-linear-gradient(right, @colorNeg, @colorPos); /* For Opera 11.1 to 12.0 */
+                                    background: -moz-linear-gradient(right, @colorNeg, @colorPos); /* For Firefox 3.6 to 15 */
+                                    background: linear-gradient(to right, @colorNeg, @colorPos); /* Standard syntax */
+                                }
+                            }
+
+                            &.beforeNeutral {
+                                &:before {
+                                    background: -webkit-linear-gradient(left, @colorNeut, @colorPos); /* For Safari 5.1 to 6.0 */
+                                    background: -o-linear-gradient(right, @colorNeut, @colorPos); /* For Opera 11.1 to 12.0 */
+                                    background: -moz-linear-gradient(right, @colorNeut, @colorPos); /* For Firefox 3.6 to 15 */
+                                    background: linear-gradient(to right, @colorNeut, @colorPos); /* Standard syntax */
+                                }
+                            }
+                        }
+
+                        &.negative {
+                            background-color: @colorNeg;
+
+                            &.beforePositive {
+                                &:before {
+                                    background: -webkit-linear-gradient(left, @colorPos, @colorNeg); /* For Safari 5.1 to 6.0 */
+                                    background: -o-linear-gradient(right, @colorPos, @colorNeg); /* For Opera 11.1 to 12.0 */
+                                    background: -moz-linear-gradient(right, @colorPos, @colorNeg); /* For Firefox 3.6 to 15 */
+                                    background: linear-gradient(to right, @colorPos, @colorNeg); /* Standard syntax */
+                                }
+                            }
+
+                            &.beforeNeutral {
+                                &:before {
+                                    background: -webkit-linear-gradient(left, @colorNeut, @colorNeg); /* For Safari 5.1 to 6.0 */
+                                    background: -o-linear-gradient(right, @colorNeut, @colorNeg); /* For Opera 11.1 to 12.0 */
+                                    background: -moz-linear-gradient(right, @colorNeut, @colorNeg); /* For Firefox 3.6 to 15 */
+                                    background: linear-gradient(to right, @colorNeut, @colorNeg); /* Standard syntax */
+                                }
+                            }
+                        }
+
+                        &.neutral {
+                            background-color: @colorNeut;
+
+                            &.beforePositive {
+                                &:before {
+                                    background: -webkit-linear-gradient(left, @colorPos, @colorNeut); /* For Safari 5.1 to 6.0 */
+                                    background: -o-linear-gradient(@colorPos, @colorNeut); /* For Opera 11.1 to 12.0 */
+                                    background: -moz-linear-gradient(@colorPos, @colorNeut); /* For Firefox 3.6 to 15 */
+                                    background: linear-gradient(@colorPos, @colorNeut); /* Standard syntax */
+                                }
+                            }
+
+                            &.beforeNegative {
+                                &:before {
+                                    background: -webkit-linear-gradient(left, @colorNeg, @colorNeut); /* For Safari 5.1 to 6.0 */
+                                    background: -o-linear-gradient(right, @colorNeg, @colorNeut); /* For Opera 11.1 to 12.0 */
+                                    background: -moz-linear-gradient(right, @colorNeg, @colorNeut); /* For Firefox 3.6 to 15 */
+                                    background: linear-gradient(to right, @colorNeg, @colorNeut); /* Standard syntax */
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
