@@ -51,7 +51,11 @@ html {
 
                 .slider-face {
                     width: 280px;
-                    height: 300px;
+
+
+                    .content {
+                        height: 300px;
+                    }
                 }
 
                 .speech {
@@ -92,6 +96,7 @@ html {
                             &:hover, &.selected {
                                 background-color: @colorPrimmary;
                                 color: white;
+                                box-shadow: 3px 3px 5px 0px #1ea1cd;
                             }
                         }
                     }
@@ -100,7 +105,7 @@ html {
 
 
             .box {
-                display: inline-block;
+                display: block;
                 float: left;
                 margin-bottom: 30px;
 

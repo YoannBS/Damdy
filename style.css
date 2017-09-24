@@ -36,6 +36,8 @@ html body .wrapper .left .player {
 }
 html body .wrapper .left .slider-face {
   width: 280px;
+}
+html body .wrapper .left .slider-face .content {
   height: 300px;
 }
 html body .wrapper .left .speech {
@@ -73,9 +75,10 @@ html body .wrapper .right .ocr ul li:hover,
 html body .wrapper .right .ocr ul li.selected {
   background-color: #23bbee;
   color: white;
+  box-shadow: 3px 3px 5px 0px #1ea1cd;
 }
 html body .wrapper .box {
-  display: inline-block;
+  display: block;
   float: left;
   margin-bottom: 30px;
 }
